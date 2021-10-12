@@ -35,6 +35,7 @@ public class Main {
         System.out.print("> ");
         String startingPoint=input.nextLine();
 
+        //If statements for declaring startingPosition
         if (startingPoint.equalsIgnoreCase("Green Goblin Street 2")){
             row=0;
             col=0;
@@ -71,6 +72,50 @@ public class Main {
             row=2;
             col=2;
         }
+        //User enters a street to go to and is saved in variable finalPoint
+        System.out.println("Where do you want to go?. Please enter your final destination: ");
+        System.out.print("> ");
+        String finalPoint=input.nextLine();
+
+        //If statements for declaring finalPosition
+        if (finalPoint.equalsIgnoreCase("Green Goblin Street 2")){
+            row=0;
+            col=0;
+        }
+        if (finalPoint.equalsIgnoreCase("Batman goes rogue street 5")){
+            row=0;
+            col=1;
+        }
+        if (finalPoint.equalsIgnoreCase("Hell let Loose 426")){
+            row=0;
+            col=2;
+        }
+        if(finalPoint.equalsIgnoreCase("Zelda is not real street 9")){
+            row=1;
+            col=0;
+        }
+        if(finalPoint.equalsIgnoreCase("Thanos never lost 4")){
+            row=1;
+            col=1;
+        }
+        if(finalPoint.equalsIgnoreCase("Tiny spider street 1")){
+            row=1;
+            col=2;
+        }
+        if(finalPoint.equalsIgnoreCase("Biggest bear street 100")){
+            row=2;
+            col=0;
+        }
+        if(finalPoint.equalsIgnoreCase("Gnome Street")){
+            row=2;
+            col=1;
+        }
+        if(finalPoint.equalsIgnoreCase("Wrath of the irish 4000")){
+            row=2;
+            col=2;
+        }
+
+        //Testing testing
         System.out.println("Your starting position is "+map[row][col]);
     }
 }
