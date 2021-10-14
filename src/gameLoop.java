@@ -20,8 +20,7 @@ public class gameLoop {
         mapAdress adress8 = new mapAdress("The Gym", random.nextBoolean());
         mapAdress adress9 = new mapAdress("Cinema", random.nextBoolean());
 
-        // Creating the map in 2d fields
-        String[][] map = gameMap(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9);
+        String[][] map = adressMap(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9);
 
         //Row and col get random numbers for different start positions every time
         int row = random.nextInt(map.length - 0) + 0;     //TEST THIS LATER
@@ -38,6 +37,14 @@ public class gameLoop {
         //Method for determining if its not raining
         isItNotRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
 
+    }
+
+    private String[][] adressMap(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9) {
+        String[][] map = {
+                {adress1.adressName, adress2.adressName, adress3.adressName,},
+                {adress4.adressName, adress5.adressName, adress6.adressName,},
+                {adress7.adressName, adress8.adressName, adress9.adressName}};
+        return map;
     }
 
     private void isItNotRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) {
@@ -77,16 +84,6 @@ public class gameLoop {
         System.out.println(s);
         // User enters a street to start from and is saved in variable startingPoint
         System.out.println("Your starting position is random for every game. This time you started at " + s9 + ".");
-    }
-
-    private String[][] gameMap(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9) {
-        // Creating the map in 2d field
-        String[][] map = {
-                {adress1.adressName, adress2.adressName, adress3.adressName,},
-                {adress4.adressName, adress5.adressName, adress6.adressName,},
-                {adress7.adressName, adress8.adressName, adress9.adressName}
-        };
-        return map;
     }
 
     private void isItRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) {
