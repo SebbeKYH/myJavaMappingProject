@@ -10,7 +10,7 @@ public class challengeRoom {
         roomChallenge=inRoomChallenge;
         gameCurrency=inGameCurrency;
     }
-    public void setRoomName(String roomName){
+    public static void setRoomName(String roomName){
         roomName=roomName;
     }
     public void setRoomDescription(String roomDescription){

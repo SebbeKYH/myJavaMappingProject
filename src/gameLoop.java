@@ -1,10 +1,11 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class gameLoop {
-    public void gameLoop() {
+    public void gameLoop() throws IOException {
         // Creating scanner object
         Scanner input = new Scanner(System.in);
 
@@ -50,7 +51,7 @@ public class gameLoop {
         return map;
     }
 
-    private void isItNotRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) {
+    private void isItNotRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) throws IOException {
         Scanner notRainingScanner = new Scanner (System.in);
         if(map[row][col] == adress1.adressName && (adress1.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
@@ -167,7 +168,7 @@ public class gameLoop {
         System.out.println("Welcome to this city sightseeing game. Here are the places you can visit in the city. Each " +
                 "destination has special missions to accomplish. Let's see if you can do them all.");
         //Reads the map in specified text file and returns it to output
-        File readBigMap=new File("./src/bigMap");
+        File readBigMap=new File("./src/TextFiles/bigMap");
         try {
             Scanner mapScanner = new Scanner(readBigMap);
             while(mapScanner.hasNextLine()){
@@ -182,7 +183,7 @@ public class gameLoop {
         System.out.println("Your starting position is random for every game. This time you started at " + s9 + ".");
     }
 
-    private void isItRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) {
+    private void isItRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) throws IOException {
         // See if its raining at your current position. If it does you have to do the challenge right away.
         if (map[row][col] == adress1.adressName && (adress1.adressRainyWeather == true)) {            //TESTA
             System.out.println("Since it's raining right nog you have to go inside and do the challenge now. " +
