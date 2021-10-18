@@ -27,7 +27,7 @@ public class adress4Challenge {
                 "You have to complete all 4 challenges in the 4 different rooms to get your reward. Move to a"+"\n"+
                 "specific room by typing it's name");
         //Reads the map in specified text file and returns it to output
-        File readAdress4Map=new File("./src/adress4Map");
+        File readAdress4Map=new File("./src/TextFiles/adress4Map");
         try {
             Scanner mapScanner = new Scanner(readAdress4Map);
             while(mapScanner.hasNextLine()){

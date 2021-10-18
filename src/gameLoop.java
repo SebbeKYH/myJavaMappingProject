@@ -5,11 +5,9 @@ import java.util.Scanner;
 
 public class gameLoop {
     public void gameLoop() {
-        // Creating scanner object
-        Scanner input = new Scanner(System.in);
 
         //Creating random object
-        Random random = new Random();
+        Random random= new Random();
 
         //Adresses
         mapAdress adress1 = new mapAdress("The Airport", random.nextBoolean());
@@ -29,9 +27,9 @@ public class gameLoop {
         int col = random.nextInt(map.length - 0) + 0;     //TEST THIS LATER
 
         //What is the starting position
-        startingPosition("-" + adress1.adressName + "\n" + "-" + adress2.adressName + "\n" + "-" + adress3.adressName + "\n" + "-" + adress4.adressName
-                + "\n" + "-" + adress5.adressName + "\n" + "-" + adress6.adressName + "\n" + "-" + adress7.adressName + "\n" + "-" + adress8.adressName
-                + "\n" + "-" + adress9.adressName, map[row][col]);
+        startingPosition(adress1.adressName+adress2.adressName+adress3.adressName+adress4.adressName
+                +adress5.adressName+adress6.adressName+adress7.adressName+adress8.adressName
+                +adress9.adressName, map[row][col]);
 
         //Method for determining if its raining or not
         isItRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
@@ -167,7 +165,7 @@ public class gameLoop {
         System.out.println("Welcome to this city sightseeing game. Here are the places you can visit in the city. Each " +
                 "destination has special missions to accomplish. Let's see if you can do them all.");
         //Reads the map in specified text file and returns it to output
-        File readBigMap=new File("./src/bigMap");
+        File readBigMap=new File("./src/TextFiles/bigMap");
         try {
             Scanner mapScanner = new Scanner(readBigMap);
             while(mapScanner.hasNextLine()){
@@ -177,7 +175,6 @@ public class gameLoop {
         catch(FileNotFoundException e){
             System.out.println("Could not read the map");
         }
-        System.out.println(s);
         // User enters a street to start from and is saved in variable startingPoint
         System.out.println("Your starting position is random for every game. This time you started at " + s9 + ".");
     }
