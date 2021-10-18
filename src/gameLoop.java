@@ -36,8 +36,9 @@ public class gameLoop {
         //Method for determining if its raining or not
         isItRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
 
-        //Method for determining if its not raining
+        //Method for determining if its NOT raining
         isItNotRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
+
 
     }
 
@@ -50,32 +51,114 @@ public class gameLoop {
     }
 
     private void isItNotRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) {
+        Scanner notRainingScanner = new Scanner (System.in);
         if(map[row][col] == adress1.adressName && (adress1.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice1=notRainingScanner.nextLine();
+            if(adressChoice1.equalsIgnoreCase("yes")){
+                adress1Challenge runTheChallenge = new adress1Challenge();
+                runTheChallenge.theChallenge1();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress2.adressName && (adress2.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice2=notRainingScanner.nextLine();
+            if(adressChoice2.equalsIgnoreCase("yes")){
+                adress2Challenge runTheChallenge = new adress2Challenge();
+                runTheChallenge.theChallenge2();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress3.adressName && (adress3.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice3=notRainingScanner.nextLine();
+            if(adressChoice3.equalsIgnoreCase("yes")){
+                adress3Challenge runTheChallenge = new adress3Challenge();
+                runTheChallenge.theChallenge3();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress4.adressName && (adress4.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice4=notRainingScanner.nextLine();
+            if(adressChoice4.equalsIgnoreCase("yes")){
+                adress4Challenge runTheChallenge = new adress4Challenge();
+                runTheChallenge.theChallenge4();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress5.adressName && (adress5.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice5=notRainingScanner.nextLine();
+            if(adressChoice5.equalsIgnoreCase("yes")){
+                adress5Challenge runTheChallenge = new adress5Challenge();
+                runTheChallenge.theChallenge5();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress6.adressName && (adress6.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice6=notRainingScanner.nextLine();
+            if(adressChoice6.equalsIgnoreCase("yes")){
+                adress6Challenge runTheChallenge = new adress6Challenge();
+                runTheChallenge.theChallenge6();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress7.adressName && (adress7.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice7=notRainingScanner.nextLine();
+            if(adressChoice7.equalsIgnoreCase("yes")){
+                adress7Challenge runTheChallenge = new adress7Challenge();
+                runTheChallenge.theChallenge7();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress8.adressName && (adress8.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice8=notRainingScanner.nextLine();
+            if(adressChoice8.equalsIgnoreCase("yes")){
+                adress8Challenge runTheChallenge = new adress8Challenge();
+                runTheChallenge.theChallenge8();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
         if(map[row][col] == adress9.adressName && (adress9.adressRainyWeather == false)) {
             System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.print(">");
+            String adressChoice9=notRainingScanner.nextLine();
+            if(adressChoice9.equalsIgnoreCase("yes")){
+                adress9Challenge runTheChallenge = new adress9Challenge();
+                runTheChallenge.theChallenge9();
+            }
+            else {
+                System.out.println("Are you cheating? Try again");
+            }
         }
     }
 
