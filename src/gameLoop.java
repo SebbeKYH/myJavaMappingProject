@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -79,8 +81,19 @@ public class gameLoop {
 
     private void startingPosition(String s, String s9) {
         //Introduce the streets to start from and ask user to pick one
-        System.out.println("Welcome the this mapping service. Here are the places you can visit in the city. Each " +
+        System.out.println("Welcome to this city sightseeing game. Here are the places you can visit in the city. Each " +
                 "destination has special missions to accomplish. Let's see if you can do them all.");
+        //Reads the map in specified text file and returns it to output
+        File readBigMap=new File("./src/bigMap");
+        try {
+            Scanner mapScanner = new Scanner(readBigMap);
+            while(mapScanner.hasNextLine()){
+                System.out.println(mapScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Could not read the map");
+        }
         System.out.println(s);
         // User enters a street to start from and is saved in variable startingPoint
         System.out.println("Your starting position is random for every game. This time you started at " + s9 + ".");
