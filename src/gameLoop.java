@@ -51,7 +51,7 @@ public class gameLoop {
     private void isItNotRaining(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9, String[][] map, int row, int col) {
         Scanner notRainingScanner = new Scanner (System.in);
         if(map[row][col] == adress1.adressName && (adress1.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice1=notRainingScanner.nextLine();
             if(adressChoice1.equalsIgnoreCase("yes")){
@@ -63,7 +63,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress2.adressName && (adress2.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice2=notRainingScanner.nextLine();
             if(adressChoice2.equalsIgnoreCase("yes")){
@@ -75,7 +75,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress3.adressName && (adress3.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice3=notRainingScanner.nextLine();
             if(adressChoice3.equalsIgnoreCase("yes")){
@@ -87,7 +87,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress4.adressName && (adress4.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice4=notRainingScanner.nextLine();
             if(adressChoice4.equalsIgnoreCase("yes")){
@@ -99,7 +99,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress5.adressName && (adress5.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice5=notRainingScanner.nextLine();
             if(adressChoice5.equalsIgnoreCase("yes")){
@@ -111,7 +111,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress6.adressName && (adress6.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice6=notRainingScanner.nextLine();
             if(adressChoice6.equalsIgnoreCase("yes")){
@@ -123,7 +123,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress7.adressName && (adress7.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice7=notRainingScanner.nextLine();
             if(adressChoice7.equalsIgnoreCase("yes")){
@@ -135,7 +135,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress8.adressName && (adress8.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice8=notRainingScanner.nextLine();
             if(adressChoice8.equalsIgnoreCase("yes")){
@@ -147,7 +147,7 @@ public class gameLoop {
             }
         }
         if(map[row][col] == adress9.adressName && (adress9.adressRainyWeather == false)) {
-            System.out.println("Do you want to enter  " + map[row][col] + "?");
+            System.out.println("Do you want to enter " + map[row][col] + "?");
             System.out.print(">");
             String adressChoice9=notRainingScanner.nextLine();
             if(adressChoice9.equalsIgnoreCase("yes")){
