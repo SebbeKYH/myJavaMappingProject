@@ -26,16 +26,22 @@ public class gameLoop {
         int row = random.nextInt(map.length - 0) + 0;     //TEST THIS LATER
         int col = random.nextInt(map.length - 0) + 0;     //TEST THIS LATER
 
-        //What is the starting position
-        startingPosition(adress1.adressName+adress2.adressName+adress3.adressName+adress4.adressName
-                +adress5.adressName+adress6.adressName+adress7.adressName+adress8.adressName
-                +adress9.adressName, map[row][col]);
+            //What is the starting position
+            startingPosition(adress1.adressName + adress2.adressName + adress3.adressName + adress4.adressName
+                    + adress5.adressName + adress6.adressName + adress7.adressName + adress8.adressName
+                    + adress9.adressName, map[row][col]);
 
-        //Method for determining if its raining or not
-        isItRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
+            boolean gameLoop=true;
+            while(gameLoop) {
 
-        //Method for determining if its NOT raining
-        isItNotRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
+                //Method for determining if its raining or not
+                isItRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
+
+                //Method for determining if its NOT raining
+                isItNotRaining(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9, map, row, col);
+
+            gameLoop=false;
+            }
 
 
     }
@@ -52,14 +58,50 @@ public class gameLoop {
         Scanner notRainingScanner = new Scanner (System.in);
         if(map[row][col] == adress1.adressName && (adress1.adressRainyWeather == false)) {
             System.out.println("Do you want to enter " + map[row][col] + "?");
-            System.out.print(">");
+            System.out.print("> ");
             String adressChoice1=notRainingScanner.nextLine();
             if(adressChoice1.equalsIgnoreCase("yes")){
                 adress1Challenge runTheChallenge = new adress1Challenge();
                 runTheChallenge.theChallenge1();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice1.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                            }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                        }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress2.adressName && (adress2.adressRainyWeather == false)) {
@@ -70,8 +112,44 @@ public class gameLoop {
                 adress2Challenge runTheChallenge = new adress2Challenge();
                 runTheChallenge.theChallenge2();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice2.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress3.adressName && (adress3.adressRainyWeather == false)) {
@@ -82,8 +160,44 @@ public class gameLoop {
                 adress3Challenge runTheChallenge = new adress3Challenge();
                 runTheChallenge.theChallenge3();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice3.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress4.adressName && (adress4.adressRainyWeather == false)) {
@@ -94,8 +208,44 @@ public class gameLoop {
                 adress4Challenge runTheChallenge = new adress4Challenge();
                 runTheChallenge.theChallenge4();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice4.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress5.adressName && (adress5.adressRainyWeather == false)) {
@@ -106,8 +256,44 @@ public class gameLoop {
                 adress5Challenge runTheChallenge = new adress5Challenge();
                 runTheChallenge.theChallenge5();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice5.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress6.adressName && (adress6.adressRainyWeather == false)) {
@@ -118,8 +304,44 @@ public class gameLoop {
                 adress6Challenge runTheChallenge = new adress6Challenge();
                 runTheChallenge.theChallenge6();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice6.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress7.adressName && (adress7.adressRainyWeather == false)) {
@@ -130,8 +352,44 @@ public class gameLoop {
                 adress7Challenge runTheChallenge = new adress7Challenge();
                 runTheChallenge.theChallenge7();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice7.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress8.adressName && (adress8.adressRainyWeather == false)) {
@@ -142,8 +400,44 @@ public class gameLoop {
                 adress8Challenge runTheChallenge = new adress8Challenge();
                 runTheChallenge.theChallenge8();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice8.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
         if(map[row][col] == adress9.adressName && (adress9.adressRainyWeather == false)) {
@@ -154,8 +448,44 @@ public class gameLoop {
                 adress9Challenge runTheChallenge = new adress9Challenge();
                 runTheChallenge.theChallenge9();
             }
-            else {
-                System.out.println("Are you cheating? Try again");
+            else if (adressChoice9.equalsIgnoreCase("no")){
+                System.out.println("Choose where you want to go. You can go in the directions of north, south, west and east");
+                Scanner gameLoopScanner = new Scanner(System.in);
+                System.out.println("What direction do you want to go: ");
+                String mapMovement = gameLoopScanner.nextLine();
+                String[] movementSplit = mapMovement.split(" ");
+                if(movementSplit[0].equalsIgnoreCase("go")){
+                    if (movementSplit.length<=2){
+                        if(movementSplit[1].equalsIgnoreCase("north")){
+                            row--;
+                            if(row<0) {
+                                row = 0;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("south")){
+                            row++;
+                            if(row>=map.length){
+                                row--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("east")){
+                            col++;
+                            if(col>=map[row].length){
+                                col--;
+                            }
+                        }
+                        else if(movementSplit[1].equalsIgnoreCase("west")){
+                            col--;
+                            if(col<0){
+                                col=0;
+                            }
+                        }
+                        System.out.println("Heading "+movementSplit[1]);
+                    }
+                    else{
+                        System.out.println("You have to type in correct command to go somewhere");
+                    }
+                }
             }
         }
     }
