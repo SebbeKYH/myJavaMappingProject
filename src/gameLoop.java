@@ -20,6 +20,7 @@ public class gameLoop {
         mapAdress adress8 = new mapAdress("The Gym", random.nextBoolean());
         mapAdress adress9 = new mapAdress("Cinema", random.nextBoolean());
 
+        //Creating map in 2d field.
         String[][] map = adressMap(adress1, adress2, adress3, adress4, adress5, adress6, adress7, adress8, adress9);
 
         //Row and col get random numbers for different start positions every time
@@ -31,6 +32,7 @@ public class gameLoop {
                     + adress5.adressName + adress6.adressName + adress7.adressName + adress8.adressName
                     + adress9.adressName, map[row][col]);
 
+            // This is wehere the gameloop starts. Boolean variable helps determining when the game has ended.
             boolean gameLoop=true;
             while(gameLoop) {
 
@@ -48,7 +50,7 @@ public class gameLoop {
 
     private String[][] adressMap(mapAdress adress1, mapAdress adress2, mapAdress adress3, mapAdress adress4, mapAdress adress5, mapAdress adress6, mapAdress adress7, mapAdress adress8, mapAdress adress9) {
         String[][] map = {
-                {adress1.adressName, adress2.adressName, adress3.adressName,},
+                {adress1.adressName, adress2.adressName, adress3.adressName,},            //Created objects inside field
                 {adress4.adressName, adress5.adressName, adress6.adressName,},
                 {adress7.adressName, adress8.adressName, adress9.adressName}};
         return map;

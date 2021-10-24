@@ -141,7 +141,7 @@ public class adress2Challenge {
     private void welcomeText() {
         System.out.println("**************************************************");
         System.out.println("Welcome to The Post Office. Have a close look at the overlay of the map."+"\n"+
-                "You have to complete all 4 challenges in the 4 different rooms to get your reward." +
+                "When you visit the rooms you have a shot at taking home some valuable points." +
                 " Enter which room you want to enter next. Type the corresponding number to go to room.");
     }
 
