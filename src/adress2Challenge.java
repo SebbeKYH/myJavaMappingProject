@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -43,81 +45,16 @@ public class adress2Challenge {
         while ((caseOneFinished & caseTwoFinished & caseThreeFinished & caseFourFinished) == false){
         switch (roomInput.nextInt()) {
             case 1:
-
-                System.out.println("You have entered " + room1ThePostOffice.roomName + room1ThePostOffice.roomDescription +
-                        room1ThePostOffice.roomChallenge);
-                readJonathansLetter();
-                caseOneFinished = true;
+                caseOneFinished = caseRoom1(room1ThePostOffice);
                 break;
             case 2:
-                System.out.println("You have entered " + room2ThePostOffice.roomName + room2ThePostOffice.roomDescription +
-                        room2ThePostOffice.roomChallenge);
-                System.out.println("Jonathans letter is a big letter sized at 82*69. Type the correct value to be" +
-                        "trimmed of his letter to be able to fit in the mailbox.");
-                Scanner case2Scanner = new Scanner(System.in);
-                System.out.print("> ");
-                String case2Value = case2Scanner.nextLine();
-                if (case2Value.equalsIgnoreCase("63*60")) {
-                    System.out.println("You are correct. If you trim 63*60 from letter it will fit i the mailbox." +
-                            " Jonathan is very thankful");
-                } else {
-                    System.out.println("You better try that calculating buisness one more time");
-                }
-                caseTwoFinished = true;
+                caseTwoFinished = caseRoom2(room2ThePostOffice);
                 break;
             case 3:
-                System.out.println("You have entered " + room3ThePostOffice.roomName + room3ThePostOffice.roomDescription +
-                        room3ThePostOffice.roomChallenge);
-                System.out.println("Write something clever to make him leave you alone. If you succeed you will " +
-                        "be rewarded.");
-                Scanner cleverScanner = new Scanner(System.in);
-                System.out.print("> ");
-                String foolClerk = cleverScanner.nextLine();
-                Random random = new Random();
-                int takeAChange = random.nextInt(3);
-                if (takeAChange >= 1) {
-                    System.out.println("You managed to fool the stupid desk clerk and have been rewarded with" +
-                            " valuable points.");
-                } else {
-                    System.out.println("Yoy told him " + foolClerk + " .Unfortunately this man is extremely clever and you weren't able to fool" +
-                            "him. He also takes away some of your points as punishment of being in an unauthorized" +
-                            "area");
-                }
-                caseThreeFinished = true;
+                caseThreeFinished = caseRoom3(room3ThePostOffice);
                 break;
             case 4:
-                Scanner quizAnswer = new Scanner(System.in);
-                System.out.println("You have entered " + room4ThePostOffice.roomName + room4ThePostOffice.roomDescription +
-                        room4ThePostOffice.roomChallenge);
-                System.out.println("Its time for a quiz about the swedish postal service. We hope you" +
-                        "do well");
-                System.out.println("What is the name of the swedish postal servic?" + "\n" +
-                        "1. Systembolaget" + "\n" +
-                        "x. Skatteverket" + "\n" +
-                        "2. Postnord");
-                System.out.print("> ");
-                String firstAnswer = quizAnswer.nextLine();
-                System.out.println("What year was the company created?" + "\n" +
-                        "1. 1923" + "\n" +
-                        "x. 1632" + "\n" +
-                        "3. 2009");
-                System.out.print("> ");
-                String secondAnswer = quizAnswer.nextLine();
-                System.out.println("You are doing really well. Keep up the good work!");
-                System.out.println("What country shares the ownership of the company with the swedish state?" + "\n" +
-                        "1. Norway" + "\n" +
-                        "x. Iceland" + "\n" +
-                        "2. Denmark");
-                System.out.print("> ");
-                String thirdAnswer = quizAnswer.nextLine();
-                System.out.println("And now for the final question");
-                System.out.println("Why is post in sweden never delivered on time?" + "\n" +
-                        "1. Swedish postmen are lazy" + "\n" +
-                        "x. Were not sure but we suspect it has something to do with the danes" + "\n" +
-                        "2. Postnord still delivers mail by bicycle (and considering the weather that's incredible");
-                System.out.print("> ");
-                String fourthAnswer = quizAnswer.nextLine();
-                caseFourFinished = true;
+                caseFourFinished = caseRoom4(room4ThePostOffice);
                 break;
         }
         welcomeText();
@@ -127,6 +64,128 @@ public class adress2Challenge {
                 backToBigMap();
             }
         }
+
+    private boolean caseRoom4(challengeRoom room4ThePostOffice) {
+        boolean caseFourFinished;
+        Scanner quizAnswer = new Scanner(System.in);
+        System.out.println("You have entered " + room4ThePostOffice.roomName + room4ThePostOffice.roomDescription +
+                room4ThePostOffice.roomChallenge);
+        System.out.println("Its time for a quiz about the swedish postal service. We hope you" +
+                "do well");
+        System.out.println("What is the name of the swedish postal servic?" + "\n" +
+                "1. Systembolaget" + "\n" +
+                "x. Skatteverket" + "\n" +
+                "2. Postnord");
+        System.out.print("> ");
+        String firstAnswer = quizAnswer.nextLine();
+        System.out.println("What year was the company created?" + "\n" +
+                "1. 1923" + "\n" +
+                "x. 1632" + "\n" +
+                "3. 2009");
+        System.out.print("> ");
+        String secondAnswer = quizAnswer.nextLine();
+        System.out.println("You are doing really well. Keep up the good work!");
+        System.out.println("What country shares the ownership of the company with the swedish state?" + "\n" +
+                "1. Norway" + "\n" +
+                "x. Iceland" + "\n" +
+                "2. Denmark");
+        System.out.print("> ");
+        String thirdAnswer = quizAnswer.nextLine();
+        System.out.println("And now for the final question");
+        System.out.println("Why is post in sweden never delivered on time?" + "\n" +
+                "1. Swedish postmen are lazy" + "\n" +
+                "x. Were not sure but we suspect it has something to do with the danes" + "\n" +
+                "2. Postnord still delivers mail by bicycle (and considering the weather that's incredible");
+        System.out.print("> ");
+        String fourthAnswer = quizAnswer.nextLine();
+        caseFourFinished = true;
+        return caseFourFinished;
+    }
+
+    private boolean caseRoom3(challengeRoom room3ThePostOffice) {
+        boolean caseThreeFinished;
+        System.out.println("You have entered " + room3ThePostOffice.roomName + room3ThePostOffice.roomDescription +
+                room3ThePostOffice.roomChallenge);
+        System.out.println("Write something clever to make him leave you alone. If you succeed you will " +
+                "be rewarded.");
+        Scanner cleverScanner = new Scanner(System.in);
+        System.out.print("> ");
+        String foolClerk = cleverScanner.nextLine();
+        Random random = new Random();
+        int takeAChange = random.nextInt(3);
+        if (takeAChange >= 1) {
+            System.out.println("You managed to fool the stupid desk clerk and have been rewarded with" +
+                    " valuable points.");
+        } else {
+            System.out.println("Yoy told him " + foolClerk + " .Unfortunately this man is extremely clever and you weren't able to fool" +
+                    "him. He also takes away some of your points as punishment of being in an unauthorized" +
+                    "area");
+        }
+        caseThreeFinished = true;
+        return caseThreeFinished;
+    }
+
+    private boolean caseRoom1(challengeRoom room1ThePostOffice) {
+        boolean caseOneFinished;
+        System.out.println("You have entered " + room1ThePostOffice.roomName + room1ThePostOffice.roomDescription +
+                room1ThePostOffice.roomChallenge);
+        //Read Jonathans letter
+        File jonathanLetter=new File("./src/TextFiles/jonathansLetter");
+        try {
+            Scanner jonathanScanner = new Scanner(jonathanLetter);
+            while(jonathanScanner.hasNext()){
+                String jonathansString= jonathanScanner.nextLine();
+                System.out.println(jonathansString);
+            }
+            jonathanScanner.close();
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Could not read the letter");
+        }
+        //Scanner fileWriterScanner = new Scanner(System.in);
+        //String playerString = fileWriterScanner.next();
+        //System.out.println("Type something >");
+        System.out.println("Lets see if you managed to do it");
+        try {
+            FileWriter playerWriter = new FileWriter("./src/TextFiles/yourLetter");
+            Scanner fileWriterScanner = new Scanner(System.in);
+            String playerString = fileWriterScanner.next();
+            System.out.println("Type something >");
+            playerWriter.write(playerString);
+            playerWriter.close();
+        }
+        catch (IOException e) {
+
+        }
+        File playerLetter = new File("./src/TextFiles/yourLetter");
+        if(jonathanLetter.equals(playerLetter)){
+            System.out.println("Contragulations you did it");
+        }
+        else{
+            System.out.println("You fucked up");
+        }
+        caseOneFinished = true;
+        return caseOneFinished;
+    }
+
+    private boolean caseRoom2(challengeRoom room2ThePostOffice) {
+        boolean caseTwoFinished;
+        System.out.println("You have entered " + room2ThePostOffice.roomName + room2ThePostOffice.roomDescription +
+                room2ThePostOffice.roomChallenge);
+        System.out.println("Jonathans letter is a big letter sized at 82*69. Type the correct value to be" +
+                "trimmed of his letter to be able to fit in the mailbox.");
+        Scanner case2Scanner = new Scanner(System.in);
+        System.out.print("> ");
+        String case2Value = case2Scanner.nextLine();
+        if (case2Value.equalsIgnoreCase("63*60")) {
+            System.out.println("You are correct. If you trim 63*60 from letter it will fit i the mailbox." +
+                    " Jonathan is very thankful");
+        } else {
+            System.out.println("You better try that calculating buisness one more time");
+        }
+        caseTwoFinished = true;
+        return caseTwoFinished;
+    }
 
     private void backToBigMap() {
         System.out.println("If you want to exit this building type EXIT");
@@ -158,17 +217,18 @@ public class adress2Challenge {
         }
     }
 
-    private void readJonathansLetter() {
+       // private void readJonathansLetter () {
         //Read Jonathans letter
-        File jonathanLetter=new File("./src/TextFiles/jonathansLetter");
-        try {
-        Scanner jonathanScanner = new Scanner(jonathanLetter);
-        while(jonathanScanner.hasNextLine()){
-            System.out.println(jonathanScanner.nextLine());
-        }
+        //File jonathanLetter = new File("./src/TextFiles/jonathansLetter");
+        //try {
+        //    Scanner jonathanScanner = new Scanner(jonathanLetter);
+        //    while (jonathanScanner.hasNextLine()) {
+        //        String jonathansLetter = jonathanScanner.nextLine();
+         //       System.out.println(jonathansLetter);
+          //  }
+        //} catch (FileNotFoundException e) {
+        //    System.out.println("Could not read the letter");
+        //}
+    //}
     }
-        catch(FileNotFoundException e){
-        System.out.println("Could not read the letter");
-    }
-    }
-}
+
